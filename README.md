@@ -81,11 +81,11 @@ From the pipeline, using GridSearchCSV, RandomClassifier was chosen as best mode
 
 | Model       | Public Score in ROC-AUC (Kaggle) |
 | ----------- | -----------      |
-| ET      | 0.64059            |
-| RF   | 0.62510             |
 | Ridge   | 0.68851             |
 | LR   | 0.68589             |
+| ET      | 0.64059            |
 | ADA   |  0.64059             |
+| RF   | 0.62510             |
 | Gradient   | 0.61897             |
 
 
