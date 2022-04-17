@@ -9,7 +9,7 @@ West Nile prediction
 |__ codes
 |   |__    01_Data_Cleaning.ipynb
 |   |__    02_Feature_Engineering.ipynb
-|   |__    03_Final_Model.ipynb
+|   |__    03_Model.ipynb
 |__ datasets
 |   |__    train.csv
 |   |__    test.csv   
@@ -64,7 +64,7 @@ the number of human infections.
 2. Feature for Date/Time
     - 2.1 Calculate the maximum day of the year that WNV was the highest, and create a feature that calculates the date difference.
 3. Feature for Lat/Long
-    - 3.1  Create a cluster using DBSCAN, and select the top 4 clusters as our hotspots. Calculate the distance using haversine and bearing.
+    - 3.1  Create a cluster using DBSCAN, and select the top 4 clusters as our hotspots. Calculate the distance using haversine.
 4. Effectiveness of spraying for WnV carriers in 2011 and 2013
 5. Create Dummies for Trap, Species and Street
 
@@ -77,7 +77,9 @@ We look at the coefficient and the top 10 features using RidgeClassifier,  some 
 
 We built several models including deep learning with l1 regularizer, dropout and early stop, however this is still around 55% ROC.
 
-From the pipeline, using GridSearchCSV, RandomClassifier was chosen as best model in terms of ROC-AUC with 74%. However, if we want to check the Precision, or how well it performs in terms of True Positive , the GradientBoost and ADABoost have the highest precision.  We decided to send the prediction of all models to Kaggle to see how is the ROC-AUC score for each model.
+From the pipeline using GridSearchCSV, ExtraTreesClassifier was chosen as best model in terms of ROC-AUC with 74%. We also use However, if we want to check the Precision, or how well it performs in terms of True Positive , the GradientBoost has the highest precision.  We decided to send the prediction of all models to Kaggle to see how is the ROC-AUC score for each model.
+
+For future improvement, we can further analyse how to incorporate spray in our models, and this will improve the false negative if we have more spray data for all years.
 
 | Model       | Public Score in ROC-AUC (Kaggle) |
 | ----------- | -----------      |
